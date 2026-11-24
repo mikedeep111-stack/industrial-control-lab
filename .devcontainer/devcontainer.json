@@ -1,0 +1,15 @@
+{
+  "name": "Industrial Control & Automation Lab",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "postCreateCommand": "pip install pymodbus==3.6.9 matplotlib numpy && npm install -g --unsafe-perm node-red node-red-dashboard",
+  "forwardPorts": [1880, 5020],
+  "portsAttributes": {
+    "1880": {
+      "label": "Node-RED SCADA/HMI",
+      "onAutoForward": "notify"
+    }
+  }
+}
